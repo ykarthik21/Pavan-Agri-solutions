@@ -11,7 +11,7 @@
         <h1>Farming Smart Solutions</h1>
         <ul>
             <li><a href="dashboard.html#farm">Farm</a></li>
-            <li><a href="dashboard.html#assets">Asset</a></li>
+            <li><a href="dashboard.html#asset">Asset</a></li>
             <li><a href="dashboard.html#crop">Crop</a></li>
             <li><a href="dashboard.html#resources">Resources</a></li>
             <li><a href="dashboard.html#management">Management</a></li>
@@ -41,6 +41,38 @@
             </table>
         </div>
 
+        <h2 id="asset">Asset</h2>
+        <div class="data-display" id="assetSection" style="display: none;">
+            <table id="assetTable">
+                <thead>
+                    <tr>
+                        <th>Asset Name</th>
+                        <th>Type</th>
+                        <th>Location</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="assetBody"></tbody>
+            </table>
+        </div>
+
+        <h2 id="crop">Crop</h2>
+        <div class="data-display" id="cropSection" style="display: none;">
+            <table id="cropTable">
+                <thead>
+                    <tr>
+                        <th>Crop Name</th>
+                        <th>Density</th>
+                        <th>No Plants/Acr</th>
+                        <th>Variety</th>
+                        <th>Planted</th>
+                        <th>No of Days</th>
+                    </tr>
+                </thead>
+                <tbody id="cropBody"></tbody>
+            </table>
+        </div>
+
         <h2 id="resources">Resources</h2>
         <div class="data-display" id="resourcesSection" style="display: none;">
             <table id="resourcesTable">
@@ -54,9 +86,40 @@
                         <th>Rating</th>
                     </tr>
                 </thead>
-        <tbody id="resourcesBody"></tbody>
+                <tbody id="resourcesBody"></tbody>
             </table>
         </div>
+
+        <h2 id="management">Management</h2>
+        <div class="data-display" id="managementSection" style="display: none;">
+            <p>No data available yet.</p>
+        </div>
+
+        <h2 id="market">Market Trends</h2>
+        <div class="data-display" id="marketSection" style="display: none;">
+            <p>No data available yet.</p>
+        </div>
+
+        <h2 id="yields">Yields</h2>
+        <div class="data-display" id="yieldsSection" style="display: none;">
+            <p>No data available yet.</p>
+        </div>
+
+        <h2 id="reports">Reports</h2>
+        <div class="data-display" id="reportsSection" style="display: none;">
+            <p>No data available yet.</p>
+        </div>
+
+        <h2 id="service">Service Requests</h2>
+        <div class="data-display" id="serviceSection" style="display: none;">
+            <p>No data available yet.</p>
+        </div>
+
+        <h2 id="supplies">Supplies</h2>
+        <div class="data-display" id="suppliesSection" style="display: none;">
+            <p>No data available yet.</p>
+        </div>
+
         <a href="add-data.html" class="add-button">Add New Data</a>
     </div>
     <script src="script.js"></script>
