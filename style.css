@@ -57,7 +57,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #333;
+    background-color: #000;
     color: white;
     padding: 10px;
     display: flex;
@@ -113,12 +113,16 @@ body {
 }
 
 .data-display tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #e6ffe6; /* Light green for even rows, matching prototype */
+}
+
+.data-display tr:nth-child(odd) {
+    background-color: #d4f4d4; /* Light green for odd rows, matching prototype */
 }
 
 /* Add Data Form */
 #dataForm {
-    max-width: 500px;
+    max-width: 600px;
     margin: 20px auto;
 }
 
@@ -146,5 +150,19 @@ body {
 }
 
 #dataForm button:hover {
+    background-color: #45a049;
+}
+
+.add-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.add-button:hover {
     background-color: #45a049;
 }
