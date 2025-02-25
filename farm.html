@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farming Smart Solutions - Add Farm Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Farming Smart Solutions</h1>
+        <ul>
+            <li><a href="dashboard.html#farm">Farm</a></li>
+            <li><a href="dashboard.html#asset">Asset</a></li>
+            <li><a href="dashboard.html#crop">Crop</a></li>
+            <li><a href="dashboard.html#resources">Resources</a></li>
+            <li><a href="dashboard.html#management">Management</a></li>
+            <li><a href="dashboard.html#market">Market Trends</a></li>
+            <li><a href="dashboard.html#yields">Yields</a></li>
+            <li><a href="dashboard.html#reports">Reports</a></li>
+            <li><a href="dashboard.html#service">Service Requests</a></li>
+            <li><a href="dashboard.html#supplies">Supplies</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Add New Farm Data</h2>
+        <form id="farmForm">
+            <label for="farmName">Farm Name:</label>
+            <input type="text" id="farmName" required>
+            <label for="ownerName">Owner Name:</label>
+            <input type="text" id="ownerName" required>
+            <label for="location">Location:</label>
+            <input type="text" id="location" required>
+            <label for="area">Area:</label>
+            <input type="text" id="area" required>
+            <label for="syNo">Sy No:</label>
+            <input type="text" id="syNo" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
