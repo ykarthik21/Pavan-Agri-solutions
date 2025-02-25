@@ -11,7 +11,7 @@
         <h1>Farming Smart Solutions</h1>
         <ul>
             <li><a href="dashboard.html#farm">Farm</a></li>
-            <li><a href="dashboard.html#assets">Asset</a></li>
+            <li><a href="dashboard.html#asset">Asset</a></li>
             <li><a href="dashboard.html#crop">Crop</a></li>
             <li><a href="dashboard.html#resources">Resources</a></li>
             <li><a href="dashboard.html#management">Management</a></li>
@@ -37,8 +37,30 @@
             <input type="text" id="area" required>
             <label for="syNo">Sy No:</label>
             <input type="text" id="syNo" required>
-            <label for="farmAttachments">Attachments:</label>
-            <input type="file" id="farmAttachments" multiple accept="image/*, .pdf">
+
+            <h3>Asset Data</h3>
+            <label for="assetName">Asset Name:</label>
+            <input type="text" id="assetName" required>
+            <label for="assetType">Type:</label>
+            <input type="text" id="assetType" required>
+            <label for="assetLocation">Location:</label>
+            <input type="text" id="assetLocation" required>
+            <label for="assetStatus">Status:</label>
+            <input type="text" id="assetStatus" required>
+
+            <h3>Crop Data</h3>
+            <label for="cropName">Crop Name:</label>
+            <input type="text" id="cropName" required>
+            <label for="density">Density:</label>
+            <input type="number" id="density" required>
+            <label for="plantsPerAcre">No Plants/Acr:</label>
+            <input type="number" id="plantsPerAcre" required>
+            <label for="variety">Variety:</label>
+            <input type="text" id="variety" required>
+            <label for="planted">Planted:</label>
+            <input type="date" id="planted" required>
+            <label for="days">No of Days:</label>
+            <input type="number" id="days" required>
 
             <h3>Resources Data</h3>
             <label for="resourceName">Name:</label>
@@ -53,8 +75,6 @@
             <input type="text" id="contactNo" required>
             <label for="rating">Rating:</label>
             <input type="text" id="rating" required>
-            <label for="resourceAttachments">Attachments:</label>
-            <input type="file" id="resourceAttachments" multiple accept="image/*, .pdf">
 
             <button type="submit">Submit</button>
         </form>
