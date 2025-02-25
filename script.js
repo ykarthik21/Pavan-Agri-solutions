@@ -13,26 +13,52 @@ document.getElementById('loginForm')?.addEventListener('submit', function(e) {
 });
 
 // Sample data storage (in memory for demo)
-let agriData = [
-    { id: 1, cropName: 'Wheat', yield: 500, date: '2025-01-15', attachments: ['wheat.jpg'] },
-    { id: 2, cropName: 'Rice', yield: 700, date: '2025-02-01', attachments: ['rice.pdf'] }
+let farmData = [
+    { id: 1, farmName: 'Farm-1', ownerName: 'Pavan', location: 'Devathapuram', area: '13.5 Acr', syNo: '120', attachments: ['meebhoomi.pdf'] },
+    { id: 2, farmName: 'Farm-1', ownerName: 'Prasanna', location: 'JR Palle', area: '3.5 Acr', syNo: '121', attachments: ['meebhoomi.pdf'] }
+];
+
+let resourcesData = [
+    { id: 1, name: 'Naresh', availableLocation: 'Simhadripuram', skill: 'Electrician-Motorpump-starter', type: 'Service', contactNo: '90000456789', rating: 'Good' },
+    { id: 2, name: 'Sana', availableLocation: 'JR Palle', skill: 'Tractor-Plowing-Trolley-Watering-Spraying-Weed', type: 'Daily', contactNo: '92300456789', rating: 'Average' },
+    { id: 3, name: 'Seenu', availableLocation: 'Devathapuram', skill: 'Pipeline and Pruning', type: 'Daily', contactNo: '92300456789', rating: 'Good' }
 ];
 
 // Display data in dashboard
-function loadData() {
-    const dataBody = document.getElementById('dataBody');
-    if (dataBody) {
-        dataBody.innerHTML = '';
-        agriData.forEach(item => {
+function loadFarmData() {
+    const farmBody = document.getElementById('farmBody');
+    if (farmBody) {
+        farmBody.innerHTML = '';
+        farmData.forEach(item => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${item.id}</td>
-                <td>${item.cropName}</td>
-                <td>${item.yield}</td>
-                <td>${item.date}</td>
+                <td>${item.farmName}</td>
+                <td>${item.ownerName}</td>
+                <td>${item.location}</td>
+                <td>${item.area}</td>
+                <td>${item.syNo}</td>
                 <td>${item.attachments.join(', ')}</td>
             `;
-            dataBody.appendChild(row);
+            farmBody.appendChild(row);
+        });
+    }
+}
+
+function loadResourcesData() {
+    const resourcesBody = document.getElementById('resourcesBody');
+    if (resourcesBody) {
+        resourcesBody.innerHTML = '';
+        resourcesData.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.name}</td>
+                <td>${item.availableLocation}</td>
+                <td>${item.skill}</td>
+                <td>${item.type}</td>
+                <td>${item.contactNo}</td>
+                <td>${item.rating}</td>
+            `;
+            resourcesBody.appendChild(row);
         });
     }
 }
@@ -40,25 +66,54 @@ function loadData() {
 // Add new data
 document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
-    const cropName = document.getElementById('cropName').value;
-    const yieldValue = document.getElementById('yield').value;
-    const date = document.getElementById('date').value;
-    const attachments = Array.from(document.getElementById('attachments').files).map(file => file.name);
 
-    const newEntry = {
-        id: agriData.length + 1,
-        cropName,
-        yield: parseInt(yieldValue),
-        date,
-        attachments
+    // Farm Data
+    const farmName = document.getElementById('farmName').value;
+    const ownerName = document.getElementById('ownerName').value;
+    const location = document.getElementById('location').value;
+    const area = document.getElementById('area').value;
+    const syNo = document.getElementById('syNo').value;
+    const farmAttachments = Array.from(document.getElementById('farmAttachments').files).map(file => file.name);
+
+    // Resources Data
+    const resourceName = document.getElementById('resourceName').value;
+    const availableLocation = document.getElementById('availableLocation').value;
+    const skill = document.getElementById('skill').value;
+    const type = document.getElementById('type').value;
+    const contactNo = document.getElementById('contactNo').value;
+    const rating = document.getElementById('rating').value;
+    const resourceAttachments = Array.from(document.getElementById('resourceAttachments').files).map(file => file.name);
+
+    // Add Farm Data
+    const newFarmEntry = {
+        id: farmData.length + 1,
+        farmName,
+        ownerName,
+        location,
+        area,
+        syNo,
+        attachments: farmAttachments
     };
+    farmData.push(newFarmEntry);
 
-    agriData.push(newEntry);
+    // Add Resources Data
+    const newResourceEntry = {
+        id: resourcesData.length + 1,
+        name: resourceName,
+        availableLocation,
+        skill,
+        type,
+        contactNo,
+        rating
+    };
+    resourcesData.push(newResourceEntry);
+
     alert('Data added successfully!');
     window.location.href = 'dashboard.html';
 });
 
 // Load data when dashboard page is loaded
 if (window.location.pathname.includes('dashboard.html')) {
-    loadData();
+    loadFarmData();
+    loadResourcesData();
 }
