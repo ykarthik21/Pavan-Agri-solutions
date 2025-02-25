@@ -8,7 +8,8 @@ body {
 
 /* Login Page */
 .login-body {
-    background: #f0f0f0; /* Plain light gray background instead of farm images */
+    background: url('https://source.unsplash.com/1600x900/?farm') no-repeat center center fixed;
+    background-size: cover;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -125,19 +126,19 @@ body {
     background-color: #d4f4d4; /* Light green for odd rows, matching prototype */
 }
 
-/* Add Data Form */
-#dataForm {
+/* Add Data Forms */
+.add-form {
     max-width: 600px;
     margin: 20px auto;
 }
 
-#dataForm label {
+.add-form label {
     display: block;
     margin: 10px 0 5px;
     color: #333;
 }
 
-#dataForm input {
+.add-form input {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -146,7 +147,7 @@ body {
     color: #333;
 }
 
-#dataForm button {
+.add-form button {
     width: 100%;
     padding: 10px;
     background-color: #4CAF50;
@@ -156,7 +157,7 @@ body {
     cursor: pointer;
 }
 
-#dataForm button:hover {
+.add-form button:hover {
     background-color: #45a049;
 }
 
