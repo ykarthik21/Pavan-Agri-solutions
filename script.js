@@ -14,8 +14,8 @@ document.getElementById('loginForm')?.addEventListener('submit', function(e) {
 
 // Sample data storage (in memory for demo)
 let farmData = [
-    { id: 1, farmName: 'Farm-1', ownerName: 'Pavan', location: 'Devathapuram', area: '13.5 Acr', syNo: '120', attachments: ['meebhoomi.pdf'] },
-    { id: 2, farmName: 'Farm-1', ownerName: 'Prasanna', location: 'JR Palle', area: '3.5 Acr', syNo: '121', attachments: ['meebhoomi.pdf'] }
+    { id: 1, farmName: 'Farm-1', ownerName: 'Pavan', location: 'Devathapuram', area: '13.5 Acr', syNo: '120' },
+    { id: 2, farmName: 'Farm-1', ownerName: 'Prasanna', location: 'JR Palle', area: '3.5 Acr', syNo: '121' }
 ];
 
 let resourcesData = [
@@ -24,10 +24,11 @@ let resourcesData = [
     { id: 3, name: 'Seenu', availableLocation: 'Devathapuram', skill: 'Pipeline and Pruning', type: 'Daily', contactNo: '92300456789', rating: 'Good' }
 ];
 
-// Display data in dashboard
+// Function to load Farm data
 function loadFarmData() {
+    const farmSection = document.getElementById('farmSection');
     const farmBody = document.getElementById('farmBody');
-    if (farmBody) {
+    if (farmSection && farmBody) {
         farmBody.innerHTML = '';
         farmData.forEach(item => {
             const row = document.createElement('tr');
@@ -37,16 +38,19 @@ function loadFarmData() {
                 <td>${item.location}</td>
                 <td>${item.area}</td>
                 <td>${item.syNo}</td>
-                <td>${item.attachments.join(', ')}</td>
+                <td><a href="https://meebhoomi.ap.gov.in/" target="_blank">AP Meebhoomi</a></td>
             `;
             farmBody.appendChild(row);
         });
+        farmSection.style.display = 'block';
     }
 }
 
+// Function to load Resources data
 function loadResourcesData() {
+    const resourcesSection = document.getElementById('resourcesSection');
     const resourcesBody = document.getElementById('resourcesBody');
-    if (resourcesBody) {
+    if (resourcesSection && resourcesBody) {
         resourcesBody.innerHTML = '';
         resourcesData.forEach(item => {
             const row = document.createElement('tr');
@@ -60,8 +64,25 @@ function loadResourcesData() {
             `;
             resourcesBody.appendChild(row);
         });
+        resourcesSection.style.display = 'block';
     }
 }
+
+// Show data only when navigating to specific components
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.includes('dashboard.html')) {
+        const hash = window.location.hash;
+        if (hash === '#farm') {
+            loadFarmData();
+        } else if (hash === '#resources') {
+            loadResourcesData();
+        }
+        // Hide all sections by default
+        document.querySelectorAll('.data-display').forEach(section => {
+            section.style.display = 'none';
+        });
+    }
+});
 
 // Add new data
 document.getElementById('dataForm')?.addEventListener('submit', function(e) {
@@ -73,7 +94,6 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     const location = document.getElementById('location').value;
     const area = document.getElementById('area').value;
     const syNo = document.getElementById('syNo').value;
-    const farmAttachments = Array.from(document.getElementById('farmAttachments').files).map(file => file.name);
 
     // Resources Data
     const resourceName = document.getElementById('resourceName').value;
@@ -82,7 +102,6 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     const type = document.getElementById('type').value;
     const contactNo = document.getElementById('contactNo').value;
     const rating = document.getElementById('rating').value;
-    const resourceAttachments = Array.from(document.getElementById('resourceAttachments').files).map(file => file.name);
 
     // Add Farm Data
     const newFarmEntry = {
@@ -91,8 +110,7 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
         ownerName,
         location,
         area,
-        syNo,
-        attachments: farmAttachments
+        syNo
     };
     farmData.push(newFarmEntry);
 
@@ -111,9 +129,3 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     alert('Data added successfully!');
     window.location.href = 'dashboard.html';
 });
-
-// Load data when dashboard page is loaded
-if (window.location.pathname.includes('dashboard.html')) {
-    loadFarmData();
-    loadResourcesData();
-}
