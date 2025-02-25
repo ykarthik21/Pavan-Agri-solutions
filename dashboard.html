@@ -10,7 +10,7 @@
     <nav class="navbar">
         <h1>Farming Smart Solutions</h1>
         <ul>
-            <li><a href="dashboard.html">Farm</a></li>
+            <li><a href="dashboard.html#farm">Farm</a></li>
             <li><a href="dashboard.html#assets">Asset</a></li>
             <li><a href="dashboard.html#crop">Crop</a></li>
             <li><a href="dashboard.html#resources">Resources</a></li>
@@ -24,8 +24,8 @@
         </ul>
     </nav>
     <div class="container">
-        <h2>Farm</h2>
-        <div class="data-display" id="farm">
+        <h2 id="farm">Farm</h2>
+        <div class="data-display" id="farmSection" style="display: none;">
             <table id="farmTable">
                 <thead>
                     <tr>
@@ -42,7 +42,7 @@
         </div>
 
         <h2 id="resources">Resources</h2>
-        <div class="data-display">
+        <div class="data-display" id="resourcesSection" style="display: none;">
             <table id="resourcesTable">
                 <thead>
                     <tr>
@@ -54,7 +54,7 @@
                         <th>Rating</th>
                     </tr>
                 </thead>
-                <tbody id="resourcesBody"></tbody>
+        <tbody id="resourcesBody"></tbody>
             </table>
         </div>
         <a href="add-data.html" class="add-button">Add New Data</a>
