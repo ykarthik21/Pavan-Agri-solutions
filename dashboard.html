@@ -3,35 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agri POC - Dashboard</title>
+    <title>Farming Smart Solutions - Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <h1>Agri POC</h1>
+        <h1>Farming Smart Solutions</h1>
         <ul>
-            <li><a href="dashboard.html">Home</a></li>
-            <li><a href="data.html">Add New Data</a></li>
+            <li><a href="dashboard.html">Farm</a></li>
+            <li><a href="dashboard.html#assets">Asset</a></li>
+            <li><a href="dashboard.html#crop">Crop</a></li>
+            <li><a href="dashboard.html#resources">Resources</a></li>
+            <li><a href="dashboard.html#management">Management</a></li>
+            <li><a href="dashboard.html#market">Market Trends</a></li>
+            <li><a href="dashboard.html#yields">Yields</a></li>
+            <li><a href="dashboard.html#reports">Reports</a></li>
+            <li><a href="dashboard.html#service">Service Requests</a></li>
+            <li><a href="dashboard.html#supplies">Supplies</a></li>
             <li><a href="index.html">Logout</a></li>
         </ul>
     </nav>
     <div class="container">
-        <h2>Welcome to Agri POC</h2>
-        <div class="data-display">
-            <h3>Agricultural Data</h3>
-            <table id="dataTable">
+        <h2>Farm</h2>
+        <div class="data-display" id="farm">
+            <table id="farmTable">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Crop Name</th>
-                        <th>Yield (kg)</th>
-                        <th>Date</th>
+                        <th>Farm Name</th>
+                        <th>Owner Name</th>
+                        <th>Location</th>
+                        <th>Area</th>
+                        <th>Sy No</th>
                         <th>Attachments</th>
                     </tr>
                 </thead>
-                <tbody id="dataBody"></tbody>
+                <tbody id="farmBody"></tbody>
             </table>
         </div>
+
+        <h2 id="resources">Resources</h2>
+        <div class="data-display">
+            <table id="resourcesTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Available Location</th>
+                        <th>Skill</th>
+                        <th>Type</th>
+                        <th>Contact No</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody id="resourcesBody"></tbody>
+            </table>
+        </div>
+        <a href="add-data.html" class="add-button">Add New Data</a>
     </div>
     <script src="script.js"></script>
 </body>
