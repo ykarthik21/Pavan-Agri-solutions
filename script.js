@@ -136,40 +136,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Add new data
-document.getElementById('dataForm')?.addEventListener('submit', function(e) {
+// Add Farm data
+document.getElementById('farmForm')?.addEventListener('submit', function(e) {
     e.preventDefault();
-
-    // Farm Data
     const farmName = document.getElementById('farmName').value;
     const ownerName = document.getElementById('ownerName').value;
     const location = document.getElementById('location').value;
     const area = document.getElementById('area').value;
     const syNo = document.getElementById('syNo').value;
 
-    // Asset Data
-    const assetName = document.getElementById('assetName').value;
-    const assetType = document.getElementById('assetType').value;
-    const assetLocation = document.getElementById('assetLocation').value;
-    const assetStatus = document.getElementById('assetStatus').value;
-
-    // Crop Data
-    const cropName = document.getElementById('cropName').value;
-    const density = document.getElementById('density').value;
-    const plantsPerAcre = document.getElementById('plantsPerAcre').value;
-    const variety = document.getElementById('variety').value;
-    const planted = document.getElementById('planted').value;
-    const days = document.getElementById('days').value;
-
-    // Resources Data
-    const resourceName = document.getElementById('resourceName').value;
-    const availableLocation = document.getElementById('availableLocation').value;
-    const skill = document.getElementById('skill').value;
-    const type = document.getElementById('type').value;
-    const contactNo = document.getElementById('contactNo').value;
-    const rating = document.getElementById('rating').value;
-
-    // Add Farm Data
     const newFarmEntry = {
         id: farmData.length + 1,
         farmName,
@@ -180,7 +155,18 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     };
     farmData.push(newFarmEntry);
 
-    // Add Asset Data
+    alert('Farm data added successfully!');
+    window.location.href = 'dashboard.html#farm';
+});
+
+// Add Asset data
+document.getElementById('assetForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const assetName = document.getElementById('assetName').value;
+    const assetType = document.getElementById('assetType').value;
+    const assetLocation = document.getElementById('assetLocation').value;
+    const assetStatus = document.getElementById('assetStatus').value;
+
     const newAssetEntry = {
         id: assetData.length + 1,
         assetName,
@@ -190,7 +176,20 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     };
     assetData.push(newAssetEntry);
 
-    // Add Crop Data
+    alert('Asset data added successfully!');
+    window.location.href = 'dashboard.html#asset';
+});
+
+// Add Crop data
+document.getElementById('cropForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const cropName = document.getElementById('cropName').value;
+    const density = document.getElementById('density').value;
+    const plantsPerAcre = document.getElementById('plantsPerAcre').value;
+    const variety = document.getElementById('variety').value;
+    const planted = document.getElementById('planted').value;
+    const days = document.getElementById('days').value;
+
     const newCropEntry = {
         id: cropData.length + 1,
         cropName,
@@ -202,7 +201,20 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     };
     cropData.push(newCropEntry);
 
-    // Add Resources Data
+    alert('Crop data added successfully!');
+    window.location.href = 'dashboard.html#crop';
+});
+
+// Add Resources data
+document.getElementById('resourcesForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const resourceName = document.getElementById('resourceName').value;
+    const availableLocation = document.getElementById('availableLocation').value;
+    const skill = document.getElementById('skill').value;
+    const type = document.getElementById('type').value;
+    const contactNo = document.getElementById('contactNo').value;
+    const rating = document.getElementById('rating').value;
+
     const newResourceEntry = {
         id: resourcesData.length + 1,
         name: resourceName,
@@ -214,6 +226,6 @@ document.getElementById('dataForm')?.addEventListener('submit', function(e) {
     };
     resourcesData.push(newResourceEntry);
 
-    alert('Data added successfully!');
-    window.location.href = 'dashboard.html';
+    alert('Resources data added successfully!');
+    window.location.href = 'dashboard.html#resources';
 });
