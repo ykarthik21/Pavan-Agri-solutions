@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agri POC - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1>Agri POC</h1>
+        <ul>
+            <li><a href="dashboard.html">Home</a></li>
+            <li><a href="data.html">Add New Data</a></li>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h2>Welcome to Agri POC</h2>
+        <div class="data-display">
+            <h3>Agricultural Data</h3>
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Crop Name</th>
+                        <th>Yield (kg)</th>
+                        <th>Date</th>
+                        <th>Attachments</th>
+                    </tr>
+                </thead>
+                <tbody id="dataBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
